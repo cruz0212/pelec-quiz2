@@ -14,7 +14,7 @@ import os
 
 os.environ['DJANGO_DEBUG'] = '0'
 os.environ['DJANGO_SECRET_KEY'] = 'replace-this-with-a-long-secret-key'
-os.environ['DJANGO_ALLOWED_HOSTS'] = 'yourusername.pythonanywhere.com'
+os.environ['DJANGO_ALLOWED_HOSTS'] = 'esjay.pythonanywhere.com'
 os.environ['CORS_ALLOWED_ORIGINS'] = 'https://your-vercel-project.vercel.app'
 ```
 
@@ -28,7 +28,7 @@ python manage.py collectstatic
 Your API endpoint will be:
 
 ```text
-https://yourusername.pythonanywhere.com/api/register/
+https://esjay.pythonanywhere.com/api/register/
 ```
 
 ## Vercel frontend
@@ -42,7 +42,7 @@ API_BASE_URL: 'http://127.0.0.1:8000',
 with your PythonAnywhere URL:
 
 ```js
-API_BASE_URL: 'https://yourusername.pythonanywhere.com',
+API_BASE_URL: 'https://esjay.pythonanywhere.com',
 ```
 
 Deploy `frontend/` as the Vercel root directory.
