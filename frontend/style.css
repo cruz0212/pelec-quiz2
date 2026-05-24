@@ -1,0 +1,234 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --ink: #182230;
+    --muted: #667085;
+    --line: #d0d5dd;
+    --field: #fbfcfe;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --green-bg: #dcfae6;
+    --green-ink: #067647;
+    --red-bg: #fee4e2;
+    --red-ink: #b42318;
+    --gold: #f5b544;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(6, 118, 71, 0.08)),
+        var(--bg);
+    color: var(--ink);
+}
+
+.page-shell {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.event-panel {
+    width: min(860px, 100%);
+    min-height: 560px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 22px 60px rgba(16, 24, 40, 0.14);
+    overflow: hidden;
+}
+
+.event-summary {
+    min-height: 100%;
+    padding: 32px;
+    display: flex;
+    align-items: flex-end;
+    background:
+        linear-gradient(rgba(24, 34, 48, 0.48), rgba(24, 34, 48, 0.2)),
+        repeating-linear-gradient(
+            135deg,
+            #1d4ed8 0,
+            #1d4ed8 16px,
+            #067647 16px,
+            #067647 32px,
+            #f5b544 32px,
+            #f5b544 48px
+        );
+}
+
+.event-date {
+    width: 150px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    color: var(--ink);
+    text-align: center;
+}
+
+.event-date span,
+.event-date strong {
+    display: block;
+}
+
+.event-date span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.event-date strong {
+    font-size: 3.2rem;
+    line-height: 1;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+}
+
+.form-heading {
+    margin-bottom: 4px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--blue);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field span {
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--field);
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.status {
+    display: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.status.is-visible {
+    display: block;
+}
+
+.status.is-success {
+    background: var(--green-bg);
+    color: var(--green-ink);
+}
+
+.status.is-error {
+    background: var(--red-bg);
+    color: var(--red-ink);
+}
+
+.field-error {
+    min-height: 18px;
+    color: var(--red-ink);
+    font-size: 0.88rem;
+}
+
+.submit-button {
+    min-height: 48px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--blue);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background: var(--blue-dark);
+    transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+    cursor: wait;
+    opacity: 0.72;
+    transform: none;
+}
+
+@media (max-width: 760px) {
+    .page-shell {
+        padding: 16px;
+        place-items: start center;
+    }
+
+    .event-panel {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .event-summary {
+        min-height: 150px;
+        align-items: center;
+    }
+
+    .event-date {
+        width: 112px;
+        height: 112px;
+    }
+
+    .event-date strong {
+        font-size: 2.3rem;
+    }
+
+    .registration-form {
+        padding: 28px 20px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+    }
+}
