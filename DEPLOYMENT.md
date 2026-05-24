@@ -15,7 +15,7 @@ import os
 os.environ['DJANGO_DEBUG'] = '0'
 os.environ['DJANGO_SECRET_KEY'] = 'replace-this-with-a-long-secret-key'
 os.environ['DJANGO_ALLOWED_HOSTS'] = 'esjay.pythonanywhere.com'
-os.environ['CORS_ALLOWED_ORIGINS'] = 'https://your-vercel-project.vercel.app'
+os.environ['CORS_ALLOWED_ORIGINS'] = 'https://pelec-quiz2-two.vercel.app'
 ```
 
 Then run:
